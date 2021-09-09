@@ -2,7 +2,10 @@ import { createStore } from 'vuex';
 import coachesModules from './modules/coaches/index.js';
 
 export default createStore({
-  state: {
+  state() {
+    return {
+      userId:'c3'
+    }
   },
   mutations: {
   },
@@ -10,5 +13,10 @@ export default createStore({
   },
   modules: {
     coaches: coachesModules
+  },
+  getters: {
+    userId(state) {
+      return state.userId;
+    }
   }
 })
